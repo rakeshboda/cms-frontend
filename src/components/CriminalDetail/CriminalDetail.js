@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./CriminalDetail.css"
 import {useParams} from "react-router-dom"
 import { MdDelete } from "react-icons/md";
@@ -10,12 +10,12 @@ const CriminalDetails=()=> {
 
   const params=useParams()
 
-  const getCriminal=async()=>{
+  const getCriminal=useCallback(async()=>{
     const response=await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/criminals/${params.id}`)
     if(response.ok){
       setCriminal(await response.json())
     }
-  }
+  },[params.id])
 
   const deleteCrime=async(id)=>{
     const response=await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/crimes/${id}`,{
@@ -37,7 +37,7 @@ const CriminalDetails=()=> {
 
   useEffect(()=>{
     getCriminal();
-  },[])
+  },[getCriminal])
 
   
 

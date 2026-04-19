@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import  { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./UpdateCriminal.css";
 
@@ -17,16 +17,19 @@ const UpdateCriminal = () => {
 
   const [isDisabled,setIsDisabled]=useState(true)
 
-  const getCriminal=async()=>{
+  const getCriminal=useCallback(async()=>{
     const response=await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/criminals/${id}`)
     if(response.ok){
       setCriminal(await response.json())
     }
-  }
+  },[id])
+
+    
+  
 
   useEffect(() => {
     getCriminal();
-  }, [id]);
+  },[getCriminal]);
 
   {/*Handle Name*/}
   const handleChange=(e)=>{
