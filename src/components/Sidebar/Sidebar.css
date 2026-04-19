@@ -1,0 +1,36 @@
+.sidebar{
+    background-image: linear-gradient(to bottom,#b91c1c,black);
+    position: absolute;
+    z-index: 100;
+    align-self: flex-end;
+    margin-top: 50px;
+    height: 90%;
+  }
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li{
+  padding: 15px 15px;
+}
+.link{
+    cursor: pointer;
+    color: #cbd5e1;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+    height: auto;
+    width: 120px;
+    margin: 2px 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar.link:hover{
+  background-color: red;
+}
+a:hover{
+  color: white !important;
+}
+

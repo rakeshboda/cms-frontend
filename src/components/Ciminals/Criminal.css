@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.page {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  color: white;
+  min-height: 90vh; 
+}
+
+
+/* Layout */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.content h2 {
+  margin-bottom: 25px;
+}
+
+/* Table */
+.criminal-table {
+  width: 60vw;
+  border-collapse: collapse;
+  background: #1f2937;
+  align-self: center;
+}
+
+.criminal-table th,
+.criminal-table td {
+  padding: 8px 20px;
+  text-align: left;
+}
+
+.criminal-table th {
+  background: #0b1220;
+  color: #38bdf8;
+}
+
+.criminal-table tr:nth-child(even) {
+  background: #243043;
+}
+.action-group{
+  display: flex;
+  justify-content: space-between;
+}
