@@ -21,6 +21,8 @@ const UpdateCriminal = () => {
     const response=await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/criminals/${id}`)
     if(response.ok){
       setCriminal(await response.json())
+    }else{
+      setCriminal("Some thing went wrong.")
     }
   },[id])
 
@@ -31,7 +33,6 @@ const UpdateCriminal = () => {
     getCriminal();
   },[getCriminal]);
 
-  {/*Handle Name*/}
   const handleChange=(e)=>{
     setCriminal(prevCriminal=>{
         return {
@@ -64,7 +65,7 @@ const UpdateCriminal = () => {
         setMessage(data)
         setTimeout(() => {
             navigate("/criminals")
-        }, 1000000);
+        }, 200);
         
     }else{
     setMessage(data)
